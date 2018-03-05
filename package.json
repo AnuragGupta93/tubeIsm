@@ -1,15 +1,14 @@
 {
-  "name": "chat-example",
+  "name": "tubeIsm",
   "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "description": "A video striming app for IIT ISM Dhanbad",
   "main": "server.js",
   "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "author": "Anurag Gupta",
   "scripts":{
    "start": "node app.js"
   },
   "dependencies": {
-    "async": "~0.2.8",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.13.4",
@@ -19,6 +18,5 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^5.0.0",
-    "socket.io": "~0.9.14"
   }
 }
