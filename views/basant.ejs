@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+
+<header class = "jumbotron py-4">
+    <h2 style="font-weight:bold; letter-spacing:20px; font-size:60px">BASANT<br></h2>
+    <p>Here are some of the best moments of Basant</p>
+ <a class="btn btn-danger" href="/basant/new">Add a New Video To Basant</a>
+</header>
+
+
+<div class = "container">
+<div class = "row text-center" style = "display:flex; flex-wrap: wrap">
+    <% basant.forEach(video =>{ %>
+        <div class = "col-md-4 col-sm-6">
+            <div class = "img-thumbnail">
+                <img class="img-thumbnail" src ="http://img.youtube.com/vi/<%= video.videoId %>/0.jpg">
+                <div class = "caption">
+                    <h4><%= video.name %> </h4><br>
+                    <a href="/basant/<%= video._id %>" class = "btn btn-primary mb-5">CLICK HERE<br> To Get Enlarged Video</a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+</div>
+
+<% include partials/footer.ejs %>

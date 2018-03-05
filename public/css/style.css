@@ -1,0 +1,47 @@
+body {
+  margin-top: 95px; }
+
+.navbar {
+  box-shadow: 2px 2px 5px #3292a6;
+  opacity: 0.9;
+  background: #fff; }
+  .navbar .nav-item {
+    font-size: 1.4rem;
+    padding-right: 20px; }
+
+.grey-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+
+.carousel-item {
+  height: 450px; }
+
+.carousel-image-1 {
+  background: url("../img/image0.png");
+  background-size: cover; }
+
+.carousel-image-2 {
+  background: url("../img/image1.jpg");
+  background-size: cover; }
+
+.carousel-image-3 {
+  background: url("../img/image2.jpg");
+  background-size: cover; }
+
+.carousel-image-4 {
+  background: url("../img/image3.jpg");
+  background-size: cover; }
+
+
+.info-header {
+  width: 50%;
+  margin: auto;
+  border-bottom: 1px #ddd solid; }
+
+
+   

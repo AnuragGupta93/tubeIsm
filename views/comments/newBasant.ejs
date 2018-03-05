@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+<div class = "container">
+        <h1 style = "text-align: center">Adding comments to <%= basant.name %> </h1><br>
+    <div class = "row">
+        <div style="width: 30% ; margin: 0 auto;">
+              <form action="/basant/<%= basant._id %>/comments" method="POST">
+                  <div class = "form-group">
+                        <input class="form-control" type="text" placeholder="text" name="comment[text]">
+                  </div>
+                  <div class = "form-group">
+                        <button class="form-control btn btn-primary" type="submit">SUBMIT</button>
+                 </div>
+              </form>  
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

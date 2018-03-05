@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tubeISM</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+  
+  .btns {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.active, .btns:hover {
+    background-color:  #4285F4;
+    transition: all .4s;
+    color: white;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+  </style>
+</head>
+<body id="home">
+    <div id="mySidenav" class="sidenav" style="position: fixed;top:95px">
+         <ul class="list-unstyled components">
+             <li>
+                 <a href="/">Home</a>
+                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                   Events
+                   <span style="position:absolute; right:40px">&#9660;</span>
+                 </a>
+                 <ul class="collapse list-unstyled" id="homeSubmenu">
+                     <li><a class="btns" href="/srijan">Srijan</a></li>
+                     <li><a class="btns" href="/concetto">Concetto</a></li>
+                     <li><a class="btns" href="/basant">Basant</a></li>
+                 </ul>
+             </li>
+             <li>
+                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Add
+                   <span style="position:absolute; right:40px">&#9660;</span>
+                 </a>
+                 <ul class="collapse list-unstyled" id="pageSubmenu">
+                     <li><a class="btns" href="/srijan/new">Srijan Video</a></li>
+                     <li><a class="btns" href="/concetto/new">Concetto Video</a></li>
+                     <li><a class="btns" href="/basant/new">Basant Video</a></li>
+                 </ul>
+             </li>
+             <li>
+                 <a href="#">Contact</a>
+             </li>
+         </ul>
+</div>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top  py-3">
+    <div class="container-fluid">
+      <p id="cross" style="font-size:30px;cursor:pointer;color:white; display: inline;" onclick="toggle()">&#9776;</p>
+      <a style="position: fixed; top:13px; left:100px" href="/" class="navbar-brand">
+      <img src="/img/text.gif" >
+      </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Events</a>
+            <div class="dropdown-menu">
+              <a href="/srijan" class="btns dropdown-item">Srijan</a>
+              <a href="/concetto" class="btns dropdown-item">Concetto</a>
+              <a href="/basant" class="btns dropdown-item">Basant</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Add</a>
+            <div class="dropdown-menu">
+              <a href="/srijan/new" class="btns dropdown-item">Srijan Video</a>
+              <a href="/concetto/new" class="btns dropdown-item">Concetto Video</a>
+              <a href="/basant/new" class="btns dropdown-item">Basant Video</a>
+            </div>
+          </li>
+
+          <% if(!currentUser){ %>
+          
+          <li class="nav-item">
+            <a href="/login" class="nav-link">LogIn</a>
+          </li>
+          <li class="nav-item">
+            <a href="/register" class="nav-link">SignUp</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+          <% } else { %>
+            <a href="/logout"  class="btn btn-primary mx-1"  title="LogOut" style="font-size:18px">
+              Signed As: <br><strong style=""><i><%= currentUser.username %></i></strong>
+            </a>
+          <% } %>
+  </nav>

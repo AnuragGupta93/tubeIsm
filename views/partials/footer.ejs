@@ -1,0 +1,51 @@
+<p style="color:white">
+     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita debitis, eveniet quas libero molestiae, officia, totam culpa? Molestiae ducimus tempore reprehenderit, cumque, odit explicabo!
+</p>
+  <footer id="main-footer" class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6 ml-auto">
+          <p class="lead">Copyright &copy; tubeISM<br></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popmotion/4.3.4/popmotion.global.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar-fixed.js"></script>
+<script>
+
+// var header = document.getElementById("hover");
+// var btns = header.getElementsByClassName("btns");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
+
+
+function toggle() {
+  if(document.getElementById("mySidenav").style.width === "250px")
+    {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("cross").innerHTML = "&#9776;";
+    }
+
+  else
+  {
+    document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("cross").innerHTML = "&times;";
+  }
+}
+</script>
+
+
+</body>
+</html>

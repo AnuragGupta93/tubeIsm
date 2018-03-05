@@ -1,0 +1,73 @@
+<% include partials/header.ejs %>
+
+<header class = "jumbotron py-4">
+    <h2 style="font-weight:bold; letter-spacing:20px; font-size:60px">SRIJAN<br></h2>
+        <a class="btn btn-danger" href="/srijan/new">Add a New Video To Srijan</a>
+</header>
+<div class="container">
+    <div class="row">
+        <div class = "col-md-3">
+            <p class = "lead">Events</p>
+            <div class= "list-group">
+                <li class = "list-group-item"  style="background:#007bff; color:white">
+                    <a href="#comments" style="color:white">COMMENTS</a>
+                </li>
+                <li class = "list-group-item">
+                    <form action = "/srijan/<%= srijan._id %>/edit" method="GET">
+                        <button class="btn btn-link m-0 p-0">EDIT</button>
+                    </form>                    
+                </li>
+                <li class = "list-group-item"  style="background:#007bff; color:white">
+                    <form action = "/srijan/<%= srijan._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-link m-0 p-0" style="color:white">DELETE</button>
+                    </form>
+                </li>
+            </div>
+        </div>
+        <div class ="col-md-9">
+            <div class = "img-thumbnail">
+                <iframe width="816" height="459" src="https://www.youtube.com/embed/<%= srijan.videoId %>"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+                </iframe>
+                <div class = "caption-full">
+                    <h4>
+                        <a  class="m-3">
+                            <span class="mx-3" style="color:rgba(0,0,0,.5)"> ||</span>
+                            <a href="" ><%= srijan.name %></a>
+                            <span class="mx-3" style="color:rgba(0,0,0,.5)"> || </span>
+                        </a>
+                    </h4>
+                    <p class="m-4" style="font-family:arial; font-size:14px">
+                        <%= srijan.description %>
+                    </p>
+                    <p style="color: #999999; letter-spacing:1px; font-size:10px">Submitted by: <%= srijan.author.username %> </p> 
+                </div>
+                    <div style="background:rgba(240,240,240,.9); border-radius:2%" class="py-4">
+                        <div class="text-right " id="comments" style="border-bottom: 2px solid grey">
+                            <a class = "btn btn-danger mx-1 mb-4 " href="/srijan/<%= srijan._id %>/comments/new">
+                               New Comment
+                            </a>
+                        </div>
+                        
+                            <%  srijan.comments.forEach(comment =>{ %>
+                              <p class="m-2">
+                                  <div style="float:left" class="mx-2">
+                                  <img src="/img/avatar.png" alt="pic" width="50" height="50" align="top">
+                                    </div>
+                                    <div style="float:left" >
+                                  <strong><a href=""><%= comment.author.username %>:</a> </strong> <br><%= comment.text %>
+                                  </div>
+                                  <br>
+                                  <br>
+                                  <hr>
+                              </p>
+                            <% }) %>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<% include partials/footer.ejs %>
